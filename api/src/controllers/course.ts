@@ -40,7 +40,7 @@ export const createCourse = async (req: Request, res: Response) => {
 
     if (validator.length > 0) throw new Array(validator);
 
-    const result = await insertCourse(dto.title, dto.description, dto.instructor, dto.thumbnail, dto.price)
+    const result = await insertCourse(dto.title, dto.description, dto.instructor , dto.thumbnail, dto.price )
     console.log(result)
     res.json(result).status(201)
 
