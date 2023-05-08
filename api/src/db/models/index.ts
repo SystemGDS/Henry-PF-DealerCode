@@ -32,8 +32,7 @@ fs
   .forEach(file => {
 
      const model = require(path.join(__dirname, file));
-    const dt = model.default(SqlConn, DataTypes)
-    console.log(dt)
+     model.default(SqlConn, DataTypes)    
      db[model.name] = model;
   })
 

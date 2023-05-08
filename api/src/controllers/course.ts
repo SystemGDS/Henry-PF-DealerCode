@@ -41,7 +41,7 @@ export const createCourse = async (req: Request, res: Response) => {
     if (validator.length > 0) throw new Array(validator);
 
     const result = await insertCourse(dto.title, dto.description, dto.instructor , dto.thumbnail, dto.price )
-    console.log(result)
+    // console.log(result)
     res.json(result).status(201)
 
   } catch (error) {
@@ -86,5 +86,3 @@ export const deleteCourse = async (req: Request, res: Response) => {
     res.json(error).status(503)
   }
 };
-
-
