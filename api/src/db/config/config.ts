@@ -23,6 +23,6 @@ export = {
     "database": String(process.env.DB_NAME),
     "host": String(process.env.DB_HOST),
     "dialect": String(process.env.DB_DIALECT),
-    "deploy" : process.env.DB_DEPLOY
+    "deploy" : String(process.env.DB_DEPLOY)
   }
 }
