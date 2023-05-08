@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 exports.default = (sequelize, DataTypes) => {
@@ -15,33 +15,15 @@ exports.default = (sequelize, DataTypes) => {
         }
     }
     Course.init({
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-            // defaultValue: DataTypes.UUIDV4,
-        },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        description: {
-            type: DataTypes.STRING,
-        },
-        instructor: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        price: {
-            type: DataTypes.FLOAT,
-        },
-        thumbnail: {
-            type: DataTypes.STRING
-        }
+        title: DataTypes.STRING,
+        description: DataTypes.STRING,
+        instructor: DataTypes.STRING,
+        price: DataTypes.NUMBER,
+        thumbnail: DataTypes.STRING,
+        isDeleted: DataTypes.BOOLEAN
     }, {
         sequelize,
-        modelName: 'Course',
+        modelName: "course",
     });
     return Course;
 };

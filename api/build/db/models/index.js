@@ -32,13 +32,17 @@ const path_1 = __importDefault(require("path"));
 const sequelize_typescript_1 = require("sequelize-typescript");
 const sequelize_1 = require("sequelize");
 const config_1 = __importDefault(require("../config/config"));
-const { development } = config_1.default;
+//import dotenv from 'dotenv'
+//dotenv.config()
+const { production } = config_1.default;
 const basename = path_1.default.basename(__filename);
+/*let SqlConn = new Sequelize(development.database,development.username,development.password, {
+  host : development.host,
+  dialect : 'postgres'
+})*/
+let SqlConn = new sequelize_typescript_1.Sequelize(`${production.connString}`);
 const db = {};
-let SqlConn = new sequelize_typescript_1.Sequelize(development.database, development.username, development.password, {
-    host: development.host,
-    dialect: 'postgres'
-});
+//let SqlConn = new Sequelize(connString)
 fs
     .readdirSync(__dirname)
     .filter(file => {

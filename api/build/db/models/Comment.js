@@ -15,25 +15,11 @@ exports.default = (sequelize, DataTypes) => {
         }
     }
     Comment.init({
-        commentId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-            // defaultValue: DataTypes.UUIDV4,
-        },
-        rating: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        content: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        courseId: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        commentId: DataTypes.INTEGER,
+        rating: DataTypes.INTEGER,
+        content: DataTypes.INTEGER,
+        courseId: DataTypes.INTEGER,
+        isDeleted: DataTypes.BOOLEAN
     }, {
         sequelize,
         modelName: 'Comment',

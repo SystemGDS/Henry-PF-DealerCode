@@ -18,7 +18,8 @@ exports.default = (sequelize, DataTypes) => {
         password: DataTypes.STRING,
         email: DataTypes.STRING,
         avatar: DataTypes.STRING,
-        rtHash: DataTypes.STRING
+        rtHash: DataTypes.STRING,
+        isDeleted: DataTypes.BOOLEAN
     }, {
         sequelize,
         modelName: 'user',
